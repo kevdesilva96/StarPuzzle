@@ -10,17 +10,13 @@ def alice(n):
     return arr
 
 def don(n):
-    arr=[if(x%2==0):x for x in range(2*n)]
+    don_step = []
+    for x in range(1, n+1):
+        don_step.append(x)
+        don_step.append(x + n)
+    return np.array(don_step)
 
 # Now to see the results
 
 print(alice(4))
-
-
-def weave(arr1,arr2):
-    #Check if arrs same size
-    if len(arr1)==len(arr2):
-        do i=range(len(arr1)):
-    else:
-        print("Arrays not same size")
-        quit
+print(don(4))
