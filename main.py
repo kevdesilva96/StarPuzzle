@@ -10,4 +10,6 @@ def alice(n):
 def don(n):
     arr=[if(x%2==0):x for x in range(2*n)]
 
+# Now to see the results
+
 print(alice(4))
