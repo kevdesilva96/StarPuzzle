@@ -20,7 +20,13 @@ print(alice(4))
 def weave(arr1,arr2):
     #Check if arrs same size
     if len(arr1)==len(arr2):
-        do i=range(len(arr1)):
+        arr=[]
+        for i in range(len(arr1)*2):
+            if(i%2==0):
+                arr.append(arr1[math.floor(i/2)])
+            else:
+                arr.append(arr2[math.floor(i/2)])
+        return arr
     else:
         print("Arrays not same size")
         quit
