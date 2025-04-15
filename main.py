@@ -11,3 +11,12 @@ def don(n):
     arr=[if(x%2==0):x for x in range(2*n)]
 
 print(alice(4))
+
+
+def weave(arr1,arr2):
+    #Check if arrs same size
+    if len(arr1)==len(arr2):
+        do i=range(len(arr1)):
+    else:
+        print("Arrays not same size")
+        quit
