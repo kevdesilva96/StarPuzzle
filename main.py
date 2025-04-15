@@ -2,6 +2,8 @@
 
 # Want to visualise the Win Triangle for a given box setup of 2 by n
 
+import math
+
 # n=columns
 def alice(n):
     arr=[x+1 for x in range(2*n)]
