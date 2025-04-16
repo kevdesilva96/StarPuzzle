@@ -41,3 +41,19 @@ def don_kds(n):
     arr2=[x+n+1 for x in range(n)]
     return (weave(arr1,arr2))
 
+# Function to take two arrays and return who wins (given star pos and option for first or both)
+def winner(arr1,arr2,star1,star2,win_option=1):
+    # Looking for first star only
+    if win_option==1:
+        arr1_pos=next((x for x in arr1 if x==star1 or x==star2),None)
+        arr2_pos=next((x for x in arr2 if x==star1 or x==star2),None)
+        if arr1_pos<arr2_pos:
+            winner="first"
+        else:
+            winner="second"
+        return winner
+    # Looking for both stars
+    elif win_option==2:
+        return True
+    else:
+        return True
