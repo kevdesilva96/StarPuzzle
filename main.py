@@ -21,6 +21,7 @@ def don(n):
 
 
 
+# Function to weave two arrays together
 def weave(arr1,arr2):
     #Check if arrs same size
     if len(arr1)==len(arr2):
