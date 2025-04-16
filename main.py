@@ -18,10 +18,6 @@ def don(n):
         don_step.append(x + n)
     return np.array(don_step)
 
-# Now to see the results
-
-print(alice(4))
-print(don(4))
 
 
 
