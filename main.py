@@ -2,26 +2,30 @@
 
 # Want to visualise the Win Triangle for a given box setup of 2 by n
 
+# Import libraries
 import numpy as np
-
 import math
 
-# n=columns
-def alice(n):
-    arr=[x+1 for x in range(2*n)]
-    return np.arr
+# CC functions for Alice and Don's steps
+# Where n = columns
+def alice_cc(n):
+    alice_step = []
+    for x in range(1, 2*n+1):
+        alice_step.append(x)
+    return np.array(alice_step)
 
-def don(n):
+def don_cc(n):
     don_step = []
     for x in range(1, n+1):
         don_step.append(x)
         don_step.append(x + n)
     return np.array(don_step)
 
+# Checking array results as expected
+print(alice_cc(4))
+print(don_cc(4))
 
-
-
-# Function to weave two arrays together
+# KDS function to weave two arrays together
 def weave(arr1,arr2):
     #Check if arrs same size
     if len(arr1)==len(arr2):
@@ -36,12 +40,20 @@ def weave(arr1,arr2):
         print("Arrays not same size")
         quit
 
+def alice_kds(n):
+    arr1 = [x+1 for x in range(2*n)]
+    return arr1
+
 def don_kds(n):
     arr1=[x+1 for x in range(n)]
     arr2=[x+n+1 for x in range(n)]
     return (weave(arr1,arr2))
 
+print(alice_kds(4))
+print(don_kds(4))
+
 # Function to return first occurence of iten in list
+# Where arr is ? and item is ?
 def first_pos(arr,item):
     for i in range(len(arr)):
         if arr[i]==item:
@@ -77,3 +89,24 @@ def winner(arr1,arr2,star1,star2,win_option=1):
     else:
         return "Invalid winner_option: Select 1 for first start, 2 for both stars"
 
+# Function to create array with all possible star combinations
+
+def star_combinations(n):
+    # Generate all combinations of stars
+    star_pos = {}
+    for i in range(1, 2 * n + 1):
+        for j in range(i + 1, 2 * n + 1):
+            if i not in star_pos:
+                star_pos[i] = []
+            star_pos[i].append((i, j))
+    return star_pos
+
+# Testing the updated function
+star_combos = star_combinations(4)
+for key, value in star_combos.items():
+    print(f"Row {key}: {value}")
+
+print(winner(alice_kds(4),don_kds(4),1,2,1))     
+
+# Kevin - I think this is a good start. I would like to see the code for the visualisation of the win triangle. ---- Hahah that was a predictive sentence from Copilot
+# My comment is that the function has returned the word "first" but.. WHO is first?
