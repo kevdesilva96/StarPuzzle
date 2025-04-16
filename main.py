@@ -41,6 +41,14 @@ def don_kds(n):
     arr2=[x+n+1 for x in range(n)]
     return (weave(arr1,arr2))
 
+# Function to return first occurence of iten in list
+def first_pos(arr,item):
+    for i in range(len(arr)):
+        if arr[i]==item:
+            return i
+            quit
+
+
 # Function to take two arrays and return who wins (given star pos and option for first or both)
 def winner(arr1,arr2,star1,star2,win_option=1):
 
