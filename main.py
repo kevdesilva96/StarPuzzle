@@ -58,16 +58,12 @@ def winner(arr1,arr2,star1,star2,win_option=1):
 
     # Looking for first star only
     if win_option==1:
-        # arr1_pos=next((x for x in arr1 if x==star1 or x==star2),None)
-        # arr2_pos=next((x for x in arr2 if x==star1 or x==star2),None)
         for i in range(len(arr1)):
             if arr1[i]==star1 or arr1[i]==star2 and arr1_pos==0:
                 arr1_pos=i
         for i in range(len(arr2)):
             if arr2[i]==star1 or arr2[i]==star2 and arr2_pos==0:
                 arr2_pos=i
-        print(arr1_pos)
-        print(arr2_pos)
         if arr1_pos<arr2_pos:
             winner="first"
         elif arr2_pos<arr1_pos:
@@ -79,4 +75,5 @@ def winner(arr1,arr2,star1,star2,win_option=1):
     elif win_option==2:
         return True
     else:
-        return True
+        return "Invalid winner_option: Select 1 for first start, 2 for both stars"
+
