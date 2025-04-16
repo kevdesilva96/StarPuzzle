@@ -9,7 +9,7 @@ import math
 # n=columns
 def alice(n):
     arr=[x+1 for x in range(2*n)]
-    return arr
+    return np.arr
 
 def don(n):
     don_step = []
