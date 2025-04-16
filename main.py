@@ -35,3 +35,9 @@ def weave(arr1,arr2):
     else:
         print("Arrays not same size")
         quit
+
+def don_kds(n):
+    arr1=[x+1 for x in range(n)]
+    arr2=[x+n+1 for x in range(n)]
+    return (weave(arr1,arr2))
+
