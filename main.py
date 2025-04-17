@@ -108,3 +108,5 @@ print(winner(alice_kds(4),don_kds(4),2,5,1))
 
 # Kevin - I think this is a good start. I would like to see the code for the visualisation of the win triangle. ---- Hahah that was a predictive sentence from Copilot
 # My comment is that the function has returned the word "first" but.. WHO is first?
+    # first means the first array in the input to the function
+    # other way is to just harcode that alice=1 and don=2 but im trying to make functions general
