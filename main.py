@@ -77,11 +77,11 @@ def winner(arr1,arr2,star1,star2,win_option=1):
             if arr2[i]==star1 or arr2[i]==star2 and arr2_pos==0:
                 arr2_pos=i
         if arr1_pos<arr2_pos:
-            winner="first"
+            winner=1
         elif arr2_pos<arr1_pos:
-            winner="second"
+            winner=2
         else:
-            winner="tie"
+            winner=0
         return winner
     # Looking for both stars
     elif win_option==2:
