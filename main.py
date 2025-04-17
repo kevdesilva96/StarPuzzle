@@ -94,19 +94,24 @@ def winner(arr1,arr2,star1,star2,win_option=1):
 def star_combinations(n):
     # Generate all combinations of stars
     star_pos = {}
+    star_win = {}
     for i in range(1, 2 * n + 1):
         for j in range(i + 1, 2 * n + 1):
             if i not in star_pos:
                 star_pos[i] = []
+                star_win[i] = []
             star_pos[i].append((i, j))
-    return star_pos
+            star_win[i].append(winner(alice_cc(n),don_cc(n),i,j,1))
+    return star_pos, star_win
 
 # Testing the updated function
-star_combos = star_combinations(4)
+star_combos, star_wins = star_combinations(4)
 for key, value in star_combos.items():
     print(f"Row {key}: {value}")
+for key, value in star_wins.items():
+    print(f"Row {key}: {value}")
 
-print(winner(alice_kds(4),don_kds(4),1,2,1))     
+print(winner(alice_kds(4),don_kds(4),2,5,1))     
 
 # Kevin - I think this is a good start. I would like to see the code for the visualisation of the win triangle. ---- Hahah that was a predictive sentence from Copilot
 # My comment is that the function has returned the word "first" but.. WHO is first?
