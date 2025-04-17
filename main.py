@@ -65,16 +65,16 @@ def first_pos(arr,item):
 def winner(arr1,arr2,star1,star2,win_option=1):
 
     # Initialise output positions
-    arr1_pos=0
-    arr2_pos=0
+    arr1_pos=-1
+    arr2_pos=-1
 
     # Looking for first star only
     if win_option==1:
         for i in range(len(arr1)):
-            if arr1[i]==star1 or arr1[i]==star2 and arr1_pos==0:
+            if (arr1[i]==star1 or arr1[i]==star2) and arr1_pos==-1:
                 arr1_pos=i
         for i in range(len(arr2)):
-            if arr2[i]==star1 or arr2[i]==star2 and arr2_pos==0:
+            if (arr2[i]==star1 or arr2[i]==star2) and arr2_pos==-1:
                 arr2_pos=i
         if arr1_pos<arr2_pos:
             winner=1
