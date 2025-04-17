@@ -52,13 +52,6 @@ def don_kds(n):
 print(alice_kds(4))
 print(don_kds(4))
 
-# Function to return first occurence of iten in list
-# Where arr is ? and item is ?
-def first_pos(arr,item):
-    for i in range(len(arr)):
-        if arr[i]==item:
-            return i
-            quit
 
 
 # Function to take two arrays and return who wins (given star pos and option for first or both)
