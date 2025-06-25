@@ -21,10 +21,6 @@ def don_cc(n):
         don_step.append(x + n)
     return np.array(don_step)
 
-# Checking array results as expected
-print(alice_cc(4))
-print(don_cc(4))
-
 # KDS function to weave two arrays together
 def weave(arr1,arr2):
     #Check if arrs same size
@@ -48,11 +44,6 @@ def don_kds(n):
     arr1=[x+1 for x in range(n)]
     arr2=[x+n+1 for x in range(n)]
     return (weave(arr1,arr2))
-
-print(alice_kds(4))
-print(don_kds(4))
-
-
 
 # Function to take two arrays and return who wins (given star pos and option for first or both)
 def winner(arr1,arr2,star1,star2,win_option=1):
@@ -104,9 +95,6 @@ for key, value in star_combos.items():
 for key, value in star_wins.items():
     print(f"Row {key}: {value}")
 
-print(winner(alice_kds(4),don_kds(4),2,5,1))     
+print(winner(alice_kds(4),don_kds(4),2,5,1))
 
-# Kevin - I think this is a good start. I would like to see the code for the visualisation of the win triangle. ---- Hahah that was a predictive sentence from Copilot
-# My comment is that the function has returned the word "first" but.. WHO is first?
-    # first means the first array in the input to the function
-    # other way is to just harcode that alice=1 and don=2 but im trying to make functions general
+
