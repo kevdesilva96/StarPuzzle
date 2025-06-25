@@ -3,8 +3,10 @@
 # Want to visualise the Win Triangle for a given box setup of 2 by n
 
 # Import libraries
+import matplotlib.pyplot
 import numpy as np
 import math
+import matplotlib
 
 # CC functions for Alice and Don's steps
 # Where n = columns
@@ -71,7 +73,7 @@ def winner(arr1,arr2,star1,star2,win_option=1):
     elif win_option==2:
         return True
     else:
-        return "Invalid winner_option: Select 1 for first start, 2 for both stars"
+        return "Invalid winner_option: Select 1 for first star, 2 for both stars"
 
 # Function to create array with all possible star combinations
 
@@ -85,16 +87,55 @@ def star_combinations(n):
                 star_pos[i] = []
                 star_win[i] = []
             star_pos[i].append((i, j))
-            star_win[i].append(winner(alice_cc(n),don_cc(n),i,j,1))
+            star_win[i].append(winner(alice_cc(n),don_cc(n),i,j,2))
     return star_pos, star_win
 
-# Testing the updated function
-star_combos, star_wins = star_combinations(4)
-for key, value in star_combos.items():
-    print(f"Row {key}: {value}")
-for key, value in star_wins.items():
-    print(f"Row {key}: {value}")
+def winner_count(n):
+    # Initialise counts
+    count0 = 0
+    count1 = 0
+    count2 = 0
 
-print(winner(alice_kds(4),don_kds(4),2,5,1))
+    star_combos, star_wins = star_combinations(n)
+
+    for key, array in star_wins.items():
+        for num in array:
+            if num==0:
+                count0+=1
+            if num==1:
+                count1+=1
+            if num==2:
+                count2+=1
+    return count0, count1, count2
+
+def graph(steps):
+    l1=[]
+    l2=[]
+    l3=[]
+    for i in range (steps):
+        l1.append(winner_count(i)[0])
+        l2.append(winner_count(i)[1])
+        l3.append(winner_count(i)[2])
+    matplotlib.pyplot.plot(l1)
+    matplotlib.pyplot.plot(l2)
+    matplotlib.pyplot.plot(l3)
+    matplotlib.pyplot.show()
+
+
+#########################################################
+# Testing the updated function
+#star_combos, star_wins = star_combinations(4)
+#for key, value in star_combos.items():
+#    print(f"Row {key}: {value}")
+#for key, value in star_wins.items():
+#    print(f"Row {key}: {value}")
+
+#print(winner(alice_kds(4),don_kds(4),2,5,1))
+
+graph(10)
+
+
+
+
 
 
